@@ -2,11 +2,13 @@
 
 
 
+mouse_Pos* Mouse = new mouse_Pos(0,0);
+
 MainGame::MainGame()
 {
 	_window = nullptr;
 	_gameState = GameState::PLAY;
-	
+
 }
 
 
@@ -18,6 +20,10 @@ void MainGame::run()
 {
 	initSystems();
 	gameLoop();
+
+	SDL_DestroyWindow(_window);
+	delete Mouse;
+	
 }
 
 void MainGame::processInput()
@@ -33,11 +39,12 @@ void MainGame::processInput()
 			break;
 
 		case SDL_MOUSEMOTION:
-			Mouse.x(evnt.motion.x);
-			Mouse.y(evnt.motion.y);
+			Mouse->Get_M_Location(evnt.motion.x, evnt.motion.y);
+			Mouse->Box(250,270,100,100);
 			break;
+
 		case SDL_TEXTINPUT:
-			/*if (_x < 250 && _y < 250)
+		/*	if (_x < 250 && _y < 250)
 			{
 				
 				Typing = true;
@@ -53,11 +60,12 @@ void MainGame::processInput()
 				}
 			}
 			else if(_x > 250 && _y > 250)
-			{ 
-				SDL_StopTextInput();
-			}
-			break;*/
+				{ 
+					SDL_StopTextInput();
+				}*/
+			break;
 		}
+		break;
 	}
 }
 
