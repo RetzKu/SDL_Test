@@ -40,32 +40,21 @@ void MainGame::processInput()
 
 		case SDL_MOUSEMOTION:
 			Mouse->Get_M_Location(evnt.motion.x, evnt.motion.y);
-			Mouse->Box(250,270,100,100);
+			Mouse->Box(250, 270, 100, 100);
 			break;
 
 		case SDL_TEXTINPUT:
-		/*	if (_x < 250 && _y < 250)
-			{
-				
-				Typing = true;
-				c = *evnt.text.text;
-				std::cout << c;
-				stream.push_back(c);
 
-				if (c == ' ')
-				{
-					std::cout << stream;
-					stream.clear();
-					Typing = false;
-				}
-			}
-			else if(_x > 250 && _y > 250)
-				{ 
-					SDL_StopTextInput();
-				}*/
+			c = *evnt.text.text;
+			std::cout << c;
+			stream.push_back(c);
+
+			std::cout << stream;
+			stream.clear();
+			SDL_StopTextInput();
+
 			break;
 		}
-		break;
 	}
 }
 
