@@ -24,7 +24,7 @@
     <ClCompile Include="get_Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mouse_Loc.cpp">
+    <ClCompile Include="Input_Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClInclude Include="get_Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Mouse_Loc.h">
+    <ClInclude Include="Input_Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

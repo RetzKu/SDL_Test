@@ -4,10 +4,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Mouse_Loc.h"
+#include <memory>
+#include "Input_Manager.h"
 
 enum class GameState{PLAY, EXIT};
-Mouse_Loc Mouse;
+
 
 class MainGame
 {
@@ -18,8 +19,8 @@ public:
 
 	void run();
 
-
-
+	
+	
 private:
 	void processInput();
 	void gameLoop();
